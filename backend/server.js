@@ -8,6 +8,7 @@ import oneShotRoutes from "./Routes/oneshotroutes.js";
 import multiShotRoutes from "./Routes/multishotroutes.js";
 
 import chainOfThoughtRoutes from "./Routes/chainofthought.js";
+import  dynamicPrompt  from "./Routes/dynamicroutes.js";
 
 dotenv.config();
 
@@ -22,6 +23,7 @@ app.use("/api/ai", oneShotRoutes);
 app.use("/api/ai", multiShotRoutes);
 
 app.use("/api/ai", chainOfThoughtRoutes);
+app.use("/api/ai", dynamicPrompt);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
