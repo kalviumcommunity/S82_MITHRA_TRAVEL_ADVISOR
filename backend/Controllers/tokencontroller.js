@@ -46,7 +46,9 @@ export const tokensAndTokenization = async (req, res) => {
     // Local tokenization
     const tokenizationResult = await tokenizeText(prompt);
 
+    // ✅ Return token_count at top-level also
     return res.json({
+      token_count: tokenizationResult.token_count,
       model_explanation: message,
       tokenization_result: tokenizationResult,
     });
