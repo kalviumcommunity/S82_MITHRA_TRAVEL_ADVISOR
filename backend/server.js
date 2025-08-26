@@ -7,6 +7,8 @@ import zeroShotRoutes from "./Routes/zeroroutes.js";
 import oneShotRoutes from "./Routes/oneshotroutes.js";
 import multiShotRoutes from "./Routes/multishotroutes.js";
 
+import chainOfThoughtRoutes from "./Routes/chainofthought.js";
+
 dotenv.config();
 
 const app = express();
@@ -18,6 +20,8 @@ app.use(bodyParser.json());
 app.use("/api/ai", zeroShotRoutes);
 app.use("/api/ai", oneShotRoutes);
 app.use("/api/ai", multiShotRoutes);
+
+app.use("/api/ai", chainOfThoughtRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
