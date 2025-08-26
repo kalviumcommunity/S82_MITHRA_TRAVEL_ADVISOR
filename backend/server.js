@@ -10,6 +10,7 @@ import multiShotRoutes from "./Routes/multishotroutes.js";
 import chainOfThoughtRoutes from "./Routes/chainofthought.js";
 import  dynamicPrompt  from "./Routes/dynamicroutes.js";
 
+import functionCallingRoutes from './Routes/functioncallingroutes.js';
 dotenv.config();
 
 const app = express();
@@ -24,6 +25,8 @@ app.use("/api/ai", multiShotRoutes);
 
 app.use("/api/ai", chainOfThoughtRoutes);
 app.use("/api/ai", dynamicPrompt);
+app.use("/api/ai", functionCallingRoutes);
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
